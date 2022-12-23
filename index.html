@@ -19,6 +19,7 @@
         rel="stylesheet">
     <!-- CSS link -->
     <link rel="stylesheet" type="text/css" href="./Assets/CSS/global.css">
+    <link rel="stylesheet" href="./Assets/CSS/pokedex.css">
 
 </head>
 
@@ -26,14 +27,48 @@
     <section class="content">
         <h1>Pokedex</h1>
 
-        <ol class="pokemons">
-            <li>Bulbasaur</li>
-            <li>Ivysaur</li>
-            <li>Venusaur</li>
-            <li>Charmander</li>
-            <li>Charmeleon</li>
-            <li>Charizard</li>
-        </ol>
+        <ol id="pokemonOl" class="pokemons">
+            <li class="pokemon">
+                <span class="number">#006</span>
+                <span class="name">Charizard</span>
+
+                <div class="detail">
+                    <ol class="types">
+                        <li class="type">fire</li>
+                        <li class="type">flying</li>
+                    </ol>
+
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/6.svg"
+                        alt="Charizard">
+                </div>
+            </li>
+            <li class="pokemon">
+                <span class="number">#005</span>
+                <span class="name">Charmeleon</span>
+
+                <div class="detail">
+                    <ol class="types">
+                        <li class="type">fire</li>
+                        <li class="type">???</li>
+                    </ol>
+
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/5.svg"
+                        alt="Charmeleon">
+                </div>
+            </li>
+            <li class="pokemon">
+                <span class="number">#004</span>
+                <span class="name">Charmander</span>
+
+                <div class="detail">
+                    <ol class="types">
+                        <li class="type">fire</li>
+                    </ol>
+
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/4.svg"
+                        alt="Charmander">
+                </div>
+            </li>
     </section>
 
     <!-- JS link -->
