@@ -1,5 +1,4 @@
 function convertPokemonToHTML(pokemon) {
-  debugger;
   return `
       <li class="pokemon">
         <span class="number">#006</span>
@@ -18,9 +17,6 @@ function convertPokemonToHTML(pokemon) {
 
 const pokemonOl = document.getElementById("pokemonOl");
 
-pokeApi.getPokemons().then((pokemonList) => {
-  for (let i = 1; i <= pokemonList.length; i++) {
-    const pokemonLi = pokemonList[i];
-    pokemonOl.innerHTML += convertPokemonToHTML(pokemonLi);
-  }
+pokeApi.getPokemons().then((pokemonList = []) => {
+  pokemonOl.innerHTML += pokemonList.map(convertPokemonToHTML).join('');
 });
