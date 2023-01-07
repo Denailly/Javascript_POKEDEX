@@ -79,3 +79,20 @@
   filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
   z-index: 1;
 }
+
+.loadMore {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-items: center;
+  margin-top: 5vh;
+}
+
+.loadMore #loadMoreButton {
+  color: #f1f1f1;
+  background-color: #f34d4d;
+  border: none;
+  letter-spacing: 0.2rem;
+  padding: 0.4rem 1.5rem;
+  border-radius: 1rem;
+}
