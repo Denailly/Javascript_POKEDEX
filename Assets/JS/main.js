@@ -1,7 +1,7 @@
 const pokemonOl = document.getElementById("pokemonOl");
-const loadMoreButton = document.getElementById("loadMoreButton");
+const loadMoreButton = document.getElementById("btnLoad");
 let offset = 0;
-const limit = 5;
+const limit = 8;
 
 function loadMore(offset, limit) {
   pokeApi.getPokemons(offset, limit).then((pokemonList = []) => {
@@ -31,10 +31,10 @@ function loadMore(offset, limit) {
 loadMore(offset, limit);
 
 loadMoreButton.addEventListener("click", () => {
-  teste();
+  loadList();
 });
 
-async function teste() {
+async function loadList() {
   offset += limit;
   await loadMore(offset, limit);
   renderEffect();

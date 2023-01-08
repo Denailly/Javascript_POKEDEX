@@ -7,14 +7,14 @@
 }
 
 /* RESPONSIVO */
-@media screen and (min-width: 380px) {
+@media screen and (min-width: 500px) {
   .pokemons {
     grid-template-columns: 1fr 1fr;
   }
 }
 
 /* RESPONSIVO */
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 710px) {
   .pokemons {
     grid-template-columns: 1fr 1fr 1fr;
   }
@@ -58,6 +58,8 @@
   color: #f1f1f1;
   margin-bottom: 0.25rem;
   text-transform: capitalize;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
 }
 
 .pokemon .detail {
@@ -97,18 +99,122 @@
 
 .loadMore {
   display: flex;
-  flex-direction: row;
   justify-content: center;
-  justify-items: center;
-  margin-top: 5vh;
+  flex-direction: row;
 }
 
-.loadMore button {
+.buttonBase {
+  display: flex;
+  justify-content: center;
+
+  position: relative;
+
+  margin: 0;
+  padding: 12px 0;
+
+  font-size: 21px;
+  line-height: 28px;
+  font-weight: 300;
+
+  color: #3b3f49;
+  border: 1px solid rgb(226, 43, 43);
+
+  text-decoration: none;
+  cursor: pointer;
+
+  transition: 0.5s;
+  width: 200px;
+  border-radius: 10px;
+}
+
+.loadMoreButton {
+  position: relative;
+  overflow: hidden;
+  margin: 4vh 0;
+  transition: 1s;
+}
+
+.loadMoreButton:hover {
+  background-color: #e22b2b;
+  box-shadow: 0 0 10px #e22b2b, 0 0 15px #e32b2b, 0 0 30px #ec0b0b;
+  transition-delay: 0.1s;
   color: #f1f1f1;
-  background-color: #f34d4d;
-  border: none;
-  letter-spacing: 0.2rem;
-  padding: 0.4rem 1.5rem;
-  border-radius: 1rem;
-  margin: 2vh 0;
+}
+
+.loadMoreButton span {
+  position: absolute;
+  display: block;
+}
+
+.loadMoreButton span:nth-child(1) {
+  width: 100%;
+  height: 2px;
+
+  top: 0;
+  left: -100%;
+
+  background: linear-gradient(90deg, transparent, #e22b2b);
+}
+
+.loadMoreButton:hover span:nth-child(1) {
+  left: 100%;
+  transition: 0.5s;
+}
+
+.loadMoreButton span :nth-child(2) {
+  width: 2px;
+  height: 100%;
+
+  top: -100%;
+  right: 0;
+
+  background: linear-gradient(180deg, transparent, #e22b2b);
+}
+
+.loadMoreButton span:nth-child(2) {
+  width: 2px;
+  height: 100%;
+
+  right: 0;
+  top: -100%;
+
+  background: linear-gradient(181.44deg, transparent, #e22b2b);
+}
+
+.loadMoreButton:hover span:nth-child(2) {
+  top: 100%;
+  transition: 0.5s;
+  transition-delay: 0.25s;
+}
+
+.loadMoreButton span:nth-child(3) {
+  width: 100%;
+  height: 2px;
+
+  bottom: 0;
+  right: -100%;
+
+  background: linear-gradient(269.44deg, transparent, #e22b2b);
+}
+
+.loadMoreButton:hover span:nth-child(3) {
+  right: 100%;
+  transition: 1s;
+  transition-delay: 0.5s;
+}
+
+.loadMoreButton span:nth-child(4) {
+  width: 2px;
+  height: 100%;
+
+  left: 0;
+  bottom: -100%;
+
+  background: linear-gradient(359.88deg, transparent, #e22b2b);
+}
+
+.loadMoreButton:hover span:nth-child(4) {
+  bottom: 100%;
+  transition: 0.5s;
+  transition-delay: 0.75s;
 }

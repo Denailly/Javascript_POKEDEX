@@ -26,7 +26,7 @@ function renderEffect() {
       }),
     30
   );
-  setTimeout(ScrollReveal({ reset: true }), 30);
+  setTimeout(ScrollReveal({ reset: true }), 1000);
 }
 
 // BUG NO RESET, RESETA APENAS OS 5 A MAIS QUE FORAM CARREGADOS
