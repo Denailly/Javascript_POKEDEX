@@ -21,6 +21,9 @@
     <link rel="stylesheet" type="text/css" href="./Assets/CSS/global.css">
     <link rel="stylesheet" href="./Assets/CSS/pokedex.css">
 
+    <!-- Scroll Reveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>ScrollReveal({ reset: true });</script>
 </head>
 
 <body>
@@ -36,9 +39,11 @@
                     <ol class="types">
                         <li class="type">???</li>
                     </ol>
-
-                    <img src="./Assets/IMAGES/UndefinedPokemon.jpg" alt="UndefinedPokemon">
+                    <div class="pokePicture">
+                        <img src="./Assets/IMAGES/UndefinedPokemon.jpg" alt="UndefinedPokemon">
+                    </div>
                 </div>
+                <img class="pokeballBackground" src="./Assets/IMAGES/pokeballBackground.png" />
             </li>
         </ol>
         <div class="loadMore">
@@ -47,9 +52,11 @@
     </section>
 
     <!-- JS link -->
+    <script src="./Assets/JS/scroll-reveal.js" defer></script>
     <script src="./Assets/JS/poke-api.js"></script>
     <script src="./Assets/JS/pokemon-model.js"></script>
     <script src="./Assets/JS/main.js"></script>
+
 </body>
 
 </html>

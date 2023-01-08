@@ -1,23 +1,41 @@
-function convertPokemonToHTML(pokemon) {
-  return `
-      <li class="pokemon">
-        <span class="number">#00${pokemon.number}</span>
-        <span class="name">${pokemon.name}</span>
-        <div class="detail">
-            <ol class="types">
-                ${pokemon.types
-                  .map((type) => `<li class="type">${type}</li>`)
-                  .join("")}
-            </ol>
+const pokemonOl = document.getElementById("pokemonOl");
+const loadMoreButton = document.getElementById("loadMoreButton");
+let offset = 0;
+const limit = 5;
 
+function loadMore(offset, limit) {
+  pokeApi.getPokemons(offset, limit).then((pokemonList = []) => {
+    pokemonOl.innerHTML += pokemonList
+      .map((pokemon) => {
+        return `  <li class="pokemon">
+      <span class="number">#00${pokemon.number}</span>
+      <span class="name">${pokemon.name}</span>
+      <div class="detail">
+        <ol class="types">
+          ${pokemon.types
+            .map((type) => `<li class="type">${type}</li>`)
+            .join("")}
+        </ol>
+          <div class="pokePicture">
             <img src="${pokemon.picture}"
                 alt=${pokemon.name}>
-        </div>
-    </li>`;
+          </div>  
+      </div>
+      <img class="pokeballBackground" src="./Assets/IMAGES/pokeballBackground.png" />
+  </li>`;
+      })
+      .join("");
+  });
 }
 
-const pokemonOl = document.getElementById("pokemonOl");
+loadMore(offset, limit);
 
-pokeApi.getPokemons().then((pokemonList = []) => {
-  pokemonOl.innerHTML += pokemonList.map(convertPokemonToHTML).join("");
+loadMoreButton.addEventListener("click", () => {
+  teste();
 });
+
+async function teste() {
+  offset += limit;
+  await loadMore(offset, limit);
+  renderEffect();
+}

@@ -35,6 +35,17 @@
   border-radius: 0.8rem;
   background-color: #3b3f49;
   color: #f1f1f1;
+  position: relative;
+  overflow: hidden;
+}
+
+.pokemon .pokeballBackground {
+  position: absolute;
+  width: 50%;
+  max-height: 100%;
+  opacity: 10%;
+  right: 0;
+  bottom: 0;
 }
 
 .pokemon .number {
@@ -52,7 +63,7 @@
 .pokemon .detail {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
 }
 
@@ -63,10 +74,10 @@
 }
 
 .pokemon .detail .types .type {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: #f1f1f1;
-  padding: 0.25rem 0.5rem;
-  margin: 0.25rem 0;
+  padding: 0.3rem 1.5rem;
+  margin: 0.5rem 0;
   background-color: #ffffff31;
   border-radius: 1rem;
   text-align: center;
@@ -75,9 +86,13 @@
 
 .pokemon .detail img {
   max-width: 100%;
-  height: 90px;
+  height: 130px;
   filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
   z-index: 1;
+}
+
+.pokemon .detail .pokePicture img {
+  position: relative;
 }
 
 .loadMore {
@@ -88,11 +103,12 @@
   margin-top: 5vh;
 }
 
-.loadMore #loadMoreButton {
+.loadMore button {
   color: #f1f1f1;
   background-color: #f34d4d;
   border: none;
   letter-spacing: 0.2rem;
   padding: 0.4rem 1.5rem;
   border-radius: 1rem;
+  margin: 2vh 0;
 }
