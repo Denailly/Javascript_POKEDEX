@@ -4,10 +4,12 @@ let offset = 0;
 const limit = 8;
 
 function loadMore(offset, limit) {
-  pokeApi.getPokemons(offset, limit).then((pokemonList = []) => {
-    pokemonOl.innerHTML += pokemonList
-      .map((pokemon) => {
-        return `  <li class="pokemon">
+  pokeApi
+    .getPokemons(offset, limit)
+    .then((pokemonList = []) => {
+      pokemonOl.innerHTML += pokemonList
+        .map((pokemon) => {
+          return `  <li class="pokemon">
       <span class="number">#00${pokemon.number}</span>
       <span class="name">${pokemon.name}</span>
       <div class="detail">
@@ -23,9 +25,17 @@ function loadMore(offset, limit) {
       </div>
       <img class="pokeballBackground" src="./Assets/IMAGES/pokeballBackground.png" />
   </li>`;
-      })
-      .join("");
-  });
+        })
+        .join("");
+    })
+    .then(() => {
+      ScrollReveal().reveal(".pokemon", {
+        delay: 200,
+        interval: 75,
+        scale: 0.7,
+        easing: "cubic-bezier(0.5, 0, 0.5, 1)",
+      });
+    });
 }
 
 loadMore(offset, limit);
@@ -34,8 +44,7 @@ loadMoreButton.addEventListener("click", () => {
   loadList();
 });
 
-async function loadList() {
+function loadList() {
   offset += limit;
-  await loadMore(offset, limit);
-  renderEffect();
+  loadMore(offset, limit);
 }
