@@ -1,5 +1,13 @@
 const pokeApi = {};
 
+//ScrollReveal({ reset: true });
+ScrollReveal().reveal(".pokemon", {
+  delay: 200,
+  interval: 75,
+  scale: 0.7,
+  easing: "cubic-bezier(0.5, 0, 0.5, 1)",
+});
+
 function convertPokeApiDetailToPokemon(pokeDetail) {
   const pokemons = new Pokemon();
 

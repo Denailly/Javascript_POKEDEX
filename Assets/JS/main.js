@@ -9,8 +9,8 @@ function loadMore(offset, limit) {
     .then((pokemonList = []) => {
       pokemonOl.innerHTML += pokemonList
         .map((pokemon) => {
-          return `  <li class="pokemon">
-      <span class="number">#00${pokemon.number}</span>
+          return `  <li class="pokemon ${pokemon.type}">
+      <span class="number">#${pokemon.number}</span>
       <span class="name">${pokemon.name}</span>
       <div class="detail">
         <ol class="types">
